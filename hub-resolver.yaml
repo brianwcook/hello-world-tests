@@ -1,0 +1,18 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: remote-task-reference
+spec:
+  taskRef:
+    resolver: hub
+    params:
+    - name: catalog # optional
+      value: tekton-catalog-tasks
+    - name: type # optional
+      value: artifact 
+    - name: kind
+      value: task
+    - name: name
+      value: git-clone
+    - name: version
+      value: "0.6"
